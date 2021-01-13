@@ -7,10 +7,10 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      buttonClicked: "",
-      assignments: [] /*Below this line, add the students state variable*/,
-      students: [],
-      grades: {}
+      buttonClicked: "",/*Stores which button was clicked, it's a state variable because the button that is clicked has the ability to change */
+      assignments: [] /*Stores the list of assignements, it's a state variable because the list changes every time a new assignement is added*//*Below this line, add the students state variable*/,
+      students: [], /*Stores the name of students, it's a state variable */
+      grades: {} /* Stores the grade for each student, it's a state variable */
     };
 
     this.handleButtonClicked = this.handleButtonClicked.bind(this);
@@ -34,6 +34,11 @@ class App extends React.Component {
   }
 
   /*Write an addStudent method here*/
+  addStudent(studentName) {
+    this.setState({
+      students: this.state.students.concat(studentName)
+    })
+  }
 
   addGrade(assignment, student, score) {
     let grades = this.state.grades;
