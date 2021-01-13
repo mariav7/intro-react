@@ -15,6 +15,7 @@ class List extends React.Component {
     this.setState({ value: event.target.value });
   }
 
+  /*When the submit button is clicked, we call the addFunction with the value of our input box, so this.props.addFunction is calling back the this.addAssignment in App */
   handleSubmit(event) {
     this.setState({
       value: ""
